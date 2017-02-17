@@ -59,7 +59,7 @@ let pauseButton = document.querySelector('#pauseChr');
 
 
 
-export interface timerObj {           // L'interfaccia si è resa necessaria per non incorrere nel problema dell' 'implicitly any type'
+export interface timerObj {
     hours: number,
     minutes: number,
     seconds: number,
@@ -70,7 +70,7 @@ export interface timerObj {           // L'interfaccia si è resa necessaria per
     stopTimer: any;
 }
 
-let timerObj: timerObj = {            // Abbiamo creato un oggetto con all'interno la funzione di partenza, la pausa e lo stop, i valori di                                                 partenza e la variabile 'interval' che contiene il timer che attiva la funzione (setInterval(timer)). La                                           soluzione è stata quella di assegnare di volta in volta i valori interni della funzione - ore, minuti,                                             secondi e millisecondi - alle proprietà dell'oggetto, in modo da poter essere riutilizzate di volta in                                             volta.
+let timerObj: timerObj = {
         hours: hoursValue.id.value,
         minutes: minutesValue.id.value,
         seconds: secondsValue.id.value,
@@ -82,7 +82,7 @@ let timerObj: timerObj = {            // Abbiamo creato un oggetto con all'inter
             let initialTime = Date.now();
             this.milliseconds = +millisecondsValue.id.value || 1000;
             this.seconds = +secondsValue.value || 0;    
-            this.minutes = +minutesValue.id.value; // I minuti si riazzeravano poichè il valore era dato da 'minutesValue.id.value', che non                                                 ritornava un numero, ma una stringa. Per questo che alla fase successiva la stringa veniva                                             calcolata come 'undefined' e quindi veniva azzerata.
+            this.minutes = +minutesValue.id.value;
             this.hours = +hoursValue.id.value;
             let timer = () => {
                 if(this.hours === undefined) {this.hours = 0;}
