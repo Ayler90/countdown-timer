@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "outDir": "./src/build",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "target": "es6",
+        "typeRoots": ["./typings"]
+    },
+    "include": [
+        "./src/app"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

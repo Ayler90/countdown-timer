@@ -1,0 +1,52 @@
+.reset-input-form {
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    outline: none;
+    color: inherit;
+}
+
+.resize-input {
+    width: 100px;
+    margin: auto -15px;
+
+    /*&:not(:focus) {
+        text-align: right;
+    }*/
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        font-size: 70px;
+        width: 120px;
+        
+    }
+}
+
+input {
+    @extend .reset-input-form;
+    
+    &:not(:focus) {
+        text-align: end;
+    }
+
+    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &::-webkit-input-placeholder {
+        transition: all .10s ease-in-out;
+        opacity: 1;
+        color: inherit;
+    }
+    &:focus::-webkit-input-placeholder, &.focus::-webkit-input-value {
+        opacity: 0.2;
+    }
+} 

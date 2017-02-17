@@ -1,0 +1,42 @@
+.reset-button-appearance {
+    width: auto;
+    height: auto;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+button {
+    @extend .reset-button-appearance;
+}
+
+.btn-chrono {
+    color: $border-color;
+    width: 250px;
+    height: 60px;
+    margin: 25px 14px auto 14px;
+    padding: 17px 15px 15px;
+    border: 1px solid $border-color;
+    @include border-radius(25px);
+    transition: all .15s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 1.2em;
+
+    &:hover:not([disabled]) {
+        color: darken($border-color, 10%);
+        border: 3px solid darken($border-color, 10%);
+    }
+    &:active, &:visited, &:focus {
+        outline: none;
+    }
+    &.disabled {
+        display: none;
+    }
+}
